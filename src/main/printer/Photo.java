@@ -1,9 +1,9 @@
-package main;
+package main.printer;
 
 
 import java.io.PrintStream;
 
-public class Photo {
+public class Photo implements HtmlElement {
     private String url;
 
     public Photo(String url) {
@@ -18,8 +18,8 @@ public class Photo {
         this.url = url;
     }
 
-
-    void writeHTML(PrintStream out) {
+    @Override
+    public void writeHTML(PrintStream out) {
        out.printf("<img src=\"%s\" alt=\"Smiley face\" width=100/>\n", url);
     }
 }

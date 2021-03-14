@@ -1,9 +1,9 @@
-package main;
+package main.printer;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Document {
+public class Document implements HtmlElement {
     private String title;
     private Photo photo;
     public List<Section> sections = new ArrayList<>();
@@ -44,7 +44,7 @@ public class Document {
         return this;
     }
 
-
+    @Override
     public void writeHTML(PrintStream out){
         out.println("<html>");
         out.println("<head><title>"+getTitle()+"</title></head>");
